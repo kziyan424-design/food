@@ -1,0 +1,2832 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Ziyan Fast Food | Food Delivery in Najibabad</title>
+
+<meta name="description"
+content="Ziyan Fast Food - Delicious fast food delivered to your doorstep in Najibabad. Order burgers, pizza, momos, biryani, shawarma and more.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Pacifico&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+
+/* =========================
+   GLOBAL
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+:root{
+    --red:#ed1c24;
+    --dark-red:#b70810;
+    --orange:#ff6a00;
+    --yellow:#ffc400;
+    --dark:#161616;
+    --light:#fff8f3;
+    --cream:#fff3e8;
+    --white:#ffffff;
+    --gray:#777;
+    --shadow:0 15px 40px rgba(0,0,0,.10);
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#fff;
+    color:var(--dark);
+    overflow-x:hidden;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+button{
+    font-family:inherit;
+    cursor:pointer;
+}
+
+.container{
+    width:92%;
+    max-width:1250px;
+    margin:auto;
+}
+
+
+/* =========================
+   TOP BAR
+========================= */
+
+.topbar{
+    background:#111;
+    color:#fff;
+    padding:8px 0;
+    font-size:13px;
+}
+
+.topbar-content{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:15px;
+}
+
+.topbar span{
+    display:flex;
+    align-items:center;
+    gap:7px;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:rgba(255,255,255,.96);
+    backdrop-filter:blur(15px);
+    box-shadow:0 5px 25px rgba(0,0,0,.08);
+}
+
+.nav-content{
+    min-height:75px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.logo-icon{
+    width:48px;
+    height:48px;
+    background:linear-gradient(135deg,var(--red),var(--orange));
+    border-radius:14px;
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:24px;
+    box-shadow:0 8px 20px rgba(237,28,36,.3);
+}
+
+.logo-text h2{
+    font-size:22px;
+    line-height:20px;
+    font-weight:800;
+}
+
+.logo-text span{
+    color:var(--red);
+    font-size:11px;
+    font-weight:600;
+}
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:28px;
+}
+
+.nav-links a{
+    font-size:14px;
+    font-weight:600;
+    position:relative;
+}
+
+.nav-links a::after{
+    content:"";
+    position:absolute;
+    width:0;
+    height:3px;
+    left:0;
+    bottom:-8px;
+    background:var(--red);
+    border-radius:5px;
+    transition:.3s;
+}
+
+.nav-links a:hover::after{
+    width:100%;
+}
+
+.nav-actions{
+    display:flex;
+    gap:10px;
+    align-items:center;
+}
+
+.icon-btn{
+    width:44px;
+    height:44px;
+    border:0;
+    background:#fff0ec;
+    color:var(--red);
+    border-radius:13px;
+    font-size:18px;
+    position:relative;
+}
+
+.cart-count{
+    position:absolute;
+    right:-4px;
+    top:-6px;
+    width:20px;
+    height:20px;
+    background:#111;
+    color:#fff;
+    font-size:11px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.menu-btn{
+    display:none;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    min-height:650px;
+    background:
+        radial-gradient(circle at 80% 20%,rgba(255,166,0,.25),transparent 30%),
+        linear-gradient(120deg,#fff7f1,#fff);
+    position:relative;
+    overflow:hidden;
+}
+
+.hero::before{
+    content:"";
+    position:absolute;
+    width:500px;
+    height:500px;
+    border-radius:50%;
+    background:rgba(237,28,36,.07);
+    right:-150px;
+    top:-100px;
+}
+
+.hero-content{
+    min-height:650px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    align-items:center;
+    gap:40px;
+}
+
+.hero-text{
+    position:relative;
+    z-index:2;
+}
+
+.badge{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:8px 15px;
+    background:#ffe9df;
+    color:var(--red);
+    border-radius:50px;
+    font-size:13px;
+    font-weight:700;
+    margin-bottom:18px;
+}
+
+.hero h1{
+    font-size:clamp(45px,6vw,78px);
+    line-height:1.02;
+    font-weight:800;
+    letter-spacing:-3px;
+}
+
+.hero h1 span{
+    color:var(--red);
+    font-family:'Pacifico',cursive;
+    font-weight:400;
+}
+
+.hero p{
+    max-width:560px;
+    margin:22px 0;
+    color:#666;
+    line-height:1.8;
+}
+
+.hero-buttons{
+    display:flex;
+    gap:14px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    border:0;
+    padding:15px 25px;
+    border-radius:14px;
+    font-weight:700;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:9px;
+    transition:.3s;
+}
+
+.btn-primary{
+    background:linear-gradient(135deg,var(--red),var(--orange));
+    color:white;
+    box-shadow:0 12px 25px rgba(237,28,36,.25);
+}
+
+.btn-primary:hover{
+    transform:translateY(-4px);
+    box-shadow:0 18px 30px rgba(237,28,36,.35);
+}
+
+.btn-outline{
+    background:#fff;
+    border:2px solid #eee;
+}
+
+.btn-outline:hover{
+    border-color:var(--red);
+    color:var(--red);
+}
+
+.hero-image{
+    position:relative;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.food-circle{
+    width:min(520px,90vw);
+    height:min(520px,90vw);
+    background:linear-gradient(135deg,#ff3b30,#ff8300);
+    border-radius:50%;
+    position:relative;
+    box-shadow:0 30px 70px rgba(237,28,36,.25);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.food-circle img{
+    width:88%;
+    height:88%;
+    object-fit:cover;
+    border-radius:50%;
+    border:10px solid rgba(255,255,255,.9);
+    animation:float 4s ease-in-out infinite;
+}
+
+@keyframes float{
+    0%,100%{transform:translateY(0)}
+    50%{transform:translateY(-15px)}
+}
+
+.floating-card{
+    position:absolute;
+    background:#fff;
+    padding:13px 18px;
+    border-radius:18px;
+    box-shadow:var(--shadow);
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-size:13px;
+    font-weight:700;
+}
+
+.floating-card i{
+    color:var(--red);
+    font-size:20px;
+}
+
+.card-one{
+    left:0;
+    bottom:70px;
+}
+
+.card-two{
+    right:-5px;
+    top:70px;
+}
+
+
+/* =========================
+   OFFER STRIP
+========================= */
+
+.offer-strip{
+    background:linear-gradient(90deg,#b8000b,#ed1c24,#ff6700);
+    color:#fff;
+    padding:17px 0;
+}
+
+.offer-content{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:25px;
+    flex-wrap:wrap;
+}
+
+.offer-content strong{
+    font-size:18px;
+}
+
+.offer-content span{
+    font-size:13px;
+}
+
+
+/* =========================
+   FEATURES
+========================= */
+
+.features{
+    padding:70px 0 30px;
+}
+
+.feature-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+}
+
+.feature{
+    padding:25px;
+    background:#fff;
+    border:1px solid #eee;
+    border-radius:20px;
+    text-align:center;
+    transition:.3s;
+}
+
+.feature:hover{
+    transform:translateY(-8px);
+    box-shadow:var(--shadow);
+}
+
+.feature i{
+    font-size:28px;
+    color:var(--red);
+    margin-bottom:12px;
+}
+
+.feature h3{
+    font-size:16px;
+    margin-bottom:5px;
+}
+
+.feature p{
+    color:#777;
+    font-size:12px;
+}
+
+
+/* =========================
+   SECTION TITLE
+========================= */
+
+.section{
+    padding:80px 0;
+}
+
+.section-head{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.section-head small{
+    color:var(--red);
+    font-weight:800;
+    text-transform:uppercase;
+    letter-spacing:2px;
+}
+
+.section-head h2{
+    font-size:40px;
+    margin-top:8px;
+}
+
+.section-head p{
+    color:#777;
+    max-width:600px;
+    margin:10px auto;
+}
+
+
+/* =========================
+   CATEGORIES
+========================= */
+
+.categories{
+    display:flex;
+    justify-content:center;
+    gap:12px;
+    flex-wrap:wrap;
+    margin-bottom:35px;
+}
+
+.category-btn{
+    padding:11px 20px;
+    border:1px solid #eee;
+    background:#fff;
+    border-radius:50px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.category-btn:hover,
+.category-btn.active{
+    background:var(--red);
+    color:#fff;
+    border-color:var(--red);
+}
+
+
+/* =========================
+   FOOD GRID
+========================= */
+
+.food-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:24px;
+}
+
+.food-card{
+    background:#fff;
+    border-radius:23px;
+    overflow:hidden;
+    border:1px solid #eee;
+    transition:.35s;
+    position:relative;
+}
+
+.food-card:hover{
+    transform:translateY(-8px);
+    box-shadow:var(--shadow);
+}
+
+.food-img{
+    height:220px;
+    position:relative;
+    overflow:hidden;
+}
+
+.food-img img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:.5s;
+}
+
+.food-card:hover .food-img img{
+    transform:scale(1.08);
+}
+
+.food-tag{
+    position:absolute;
+    top:14px;
+    left:14px;
+    background:var(--red);
+    color:white;
+    padding:6px 11px;
+    border-radius:8px;
+    font-size:10px;
+    font-weight:800;
+}
+
+.heart{
+    position:absolute;
+    right:14px;
+    top:14px;
+    width:36px;
+    height:36px;
+    border:0;
+    border-radius:50%;
+    background:#fff;
+    color:#777;
+}
+
+.food-info{
+    padding:18px;
+}
+
+.food-info h3{
+    font-size:17px;
+    margin-bottom:5px;
+}
+
+.food-info p{
+    color:#888;
+    font-size:12px;
+    min-height:38px;
+}
+
+.rating{
+    color:#ffb400;
+    font-size:12px;
+    margin:10px 0;
+}
+
+.food-bottom{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.price{
+    font-size:20px;
+    font-weight:800;
+}
+
+.price small{
+    color:#aaa;
+    font-size:12px;
+    text-decoration:line-through;
+    margin-left:4px;
+}
+
+.add-btn{
+    width:42px;
+    height:42px;
+    border:0;
+    background:var(--red);
+    color:#fff;
+    border-radius:12px;
+    font-size:18px;
+    transition:.3s;
+}
+
+.add-btn:hover{
+    transform:scale(1.08);
+    background:#111;
+}
+
+
+/* =========================
+   SPECIAL BANNER
+========================= */
+
+.special{
+    padding:30px 0 80px;
+}
+
+.special-box{
+    min-height:300px;
+    background:
+        linear-gradient(90deg,rgba(0,0,0,.82),rgba(0,0,0,.3)),
+        url("https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1500&q=85");
+    background-size:cover;
+    background-position:center;
+    border-radius:30px;
+    display:flex;
+    align-items:center;
+    padding:50px;
+    color:#fff;
+    overflow:hidden;
+}
+
+.special-box small{
+    color:#ffcf00;
+    font-weight:800;
+}
+
+.special-box h2{
+    font-size:45px;
+    max-width:600px;
+    margin:8px 0;
+}
+
+.special-box p{
+    color:#ddd;
+    max-width:500px;
+    margin-bottom:20px;
+}
+
+
+/* =========================
+   ABOUT
+========================= */
+
+.about{
+    background:var(--light);
+}
+
+.about-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:60px;
+    align-items:center;
+}
+
+.about-image{
+    position:relative;
+}
+
+.about-image img{
+    width:100%;
+    height:450px;
+    object-fit:cover;
+    border-radius:30px;
+}
+
+.experience{
+    position:absolute;
+    bottom:-20px;
+    right:-20px;
+    background:var(--red);
+    color:#fff;
+    padding:20px;
+    border-radius:20px;
+    text-align:center;
+}
+
+.experience strong{
+    font-size:32px;
+    display:block;
+}
+
+.about-text h2{
+    font-size:42px;
+    margin:10px 0 18px;
+}
+
+.about-text p{
+    color:#666;
+    line-height:1.8;
+    margin-bottom:15px;
+}
+
+.about-list{
+    list-style:none;
+    margin:25px 0;
+}
+
+.about-list li{
+    margin:12px 0;
+    display:flex;
+    gap:10px;
+}
+
+.about-list i{
+    color:var(--red);
+}
+
+
+/* =========================
+   LOCATION
+========================= */
+
+.location-box{
+    background:#111;
+    color:#fff;
+    border-radius:30px;
+    padding:45px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:30px;
+}
+
+.location-box h2{
+    font-size:34px;
+}
+
+.location-box p{
+    color:#bbb;
+    margin:15px 0;
+}
+
+.contact-item{
+    display:flex;
+    gap:14px;
+    margin:18px 0;
+    align-items:flex-start;
+}
+
+.contact-item i{
+    color:#ff5b2e;
+    font-size:20px;
+}
+
+.map-box{
+    background:
+        linear-gradient(rgba(237,28,36,.65),rgba(0,0,0,.7)),
+        url("https://images.unsplash.com/photo-1523731407965-2430cd12f5e4?auto=format&fit=crop&w=1000&q=80");
+    background-size:cover;
+    background-position:center;
+    border-radius:22px;
+    min-height:280px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+}
+
+.map-box i{
+    font-size:45px;
+    color:#fff;
+    margin-bottom:10px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    background:#090909;
+    color:#fff;
+    padding:55px 0 25px;
+}
+
+.footer-grid{
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr 1fr;
+    gap:40px;
+}
+
+footer h3{
+    margin-bottom:18px;
+}
+
+footer p,
+footer li{
+    color:#999;
+    font-size:13px;
+    line-height:1.8;
+}
+
+footer ul{
+    list-style:none;
+}
+
+footer li{
+    margin:7px 0;
+}
+
+.social{
+    display:flex;
+    gap:10px;
+    margin-top:20px;
+}
+
+.social a{
+    width:40px;
+    height:40px;
+    border-radius:50%;
+    background:#1c1c1c;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    transition:.3s;
+}
+
+.social a:hover{
+    background:var(--red);
+}
+
+.copyright{
+    border-top:1px solid #222;
+    margin-top:40px;
+    padding-top:20px;
+    text-align:center;
+    color:#666;
+    font-size:12px;
+}
+
+
+/* =========================
+   CART SIDEBAR
+========================= */
+
+.cart-overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.55);
+    z-index:1999;
+    opacity:0;
+    pointer-events:none;
+    transition:.3s;
+}
+
+.cart-overlay.show{
+    opacity:1;
+    pointer-events:auto;
+}
+
+.cart{
+    position:fixed;
+    right:-450px;
+    top:0;
+    width:min(420px,100%);
+    height:100vh;
+    background:#fff;
+    z-index:2000;
+    box-shadow:-15px 0 40px rgba(0,0,0,.2);
+    transition:.4s;
+    display:flex;
+    flex-direction:column;
+}
+
+.cart.show{
+    right:0;
+}
+
+.cart-header{
+    padding:22px;
+    border-bottom:1px solid #eee;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.cart-header h2{
+    font-size:22px;
+}
+
+.close-cart{
+    border:0;
+    background:#f5f5f5;
+    width:40px;
+    height:40px;
+    border-radius:50%;
+}
+
+.cart-items{
+    flex:1;
+    overflow:auto;
+    padding:20px;
+}
+
+.cart-item{
+    display:flex;
+    gap:12px;
+    padding:12px 0;
+    border-bottom:1px solid #eee;
+}
+
+.cart-item img{
+    width:70px;
+    height:70px;
+    border-radius:12px;
+    object-fit:cover;
+}
+
+.cart-item-info{
+    flex:1;
+}
+
+.cart-item-info h4{
+    font-size:14px;
+}
+
+.cart-item-info p{
+    color:var(--red);
+    font-weight:700;
+    font-size:13px;
+}
+
+.qty{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    margin-top:7px;
+}
+
+.qty button{
+    border:0;
+    width:25px;
+    height:25px;
+    border-radius:7px;
+    background:#eee;
+}
+
+.remove{
+    color:#e00;
+    border:0;
+    background:none;
+}
+
+.cart-footer{
+    padding:20px;
+    border-top:1px solid #eee;
+}
+
+.total-row{
+    display:flex;
+    justify-content:space-between;
+    font-size:20px;
+    font-weight:800;
+    margin-bottom:15px;
+}
+
+
+/* =========================
+   CHECKOUT MODAL
+========================= */
+
+.modal{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.7);
+    z-index:3000;
+    display:none;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+}
+
+.modal.show{
+    display:flex;
+}
+
+.modal-box{
+    width:min(600px,100%);
+    max-height:90vh;
+    overflow:auto;
+    background:#fff;
+    border-radius:25px;
+    padding:30px;
+    position:relative;
+}
+
+.modal-box h2{
+    margin-bottom:20px;
+}
+
+.close-modal{
+    position:absolute;
+    right:20px;
+    top:20px;
+    width:38px;
+    height:38px;
+    border:0;
+    border-radius:50%;
+}
+
+.form-group{
+    margin-bottom:15px;
+}
+
+.form-group label{
+    display:block;
+    font-size:13px;
+    font-weight:600;
+    margin-bottom:6px;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select{
+    width:100%;
+    padding:13px 15px;
+    border:1px solid #ddd;
+    border-radius:12px;
+    outline:none;
+    font-family:inherit;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus{
+    border-color:var(--red);
+}
+
+.success{
+    text-align:center;
+    display:none;
+}
+
+.success i{
+    font-size:65px;
+    color:#20b15a;
+    margin-bottom:15px;
+}
+
+
+/* =========================
+   TOAST
+========================= */
+
+.toast{
+    position:fixed;
+    right:25px;
+    bottom:25px;
+    background:#111;
+    color:#fff;
+    padding:14px 20px;
+    border-radius:12px;
+    z-index:5000;
+    transform:translateY(100px);
+    opacity:0;
+    transition:.4s;
+}
+
+.toast.show{
+    transform:translateY(0);
+    opacity:1;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:1000px){
+
+    .food-grid{
+        grid-template-columns:repeat(3,1fr);
+    }
+
+    .feature-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .nav-links{
+        gap:15px;
+    }
+
+}
+
+@media(max-width:800px){
+
+    .topbar-content{
+        justify-content:center;
+    }
+
+    .topbar-content span:last-child{
+        display:none;
+    }
+
+    .nav-links{
+        position:absolute;
+        left:0;
+        right:0;
+        top:75px;
+        background:#fff;
+        padding:20px;
+        flex-direction:column;
+        display:none;
+        box-shadow:0 10px 20px rgba(0,0,0,.08);
+    }
+
+    .nav-links.show{
+        display:flex;
+    }
+
+    .menu-btn{
+        display:block;
+    }
+
+    .hero-content{
+        grid-template-columns:1fr;
+        padding:70px 0;
+        text-align:center;
+    }
+
+    .hero p{
+        margin-left:auto;
+        margin-right:auto;
+    }
+
+    .hero-buttons{
+        justify-content:center;
+    }
+
+    .hero-image{
+        margin-top:20px;
+    }
+
+    .food-circle{
+        width:380px;
+        height:380px;
+    }
+
+    .card-one{
+        left:10px;
+    }
+
+    .card-two{
+        right:10px;
+    }
+
+    .food-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .about-grid,
+    .location-box{
+        grid-template-columns:1fr;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+}
+
+@media(max-width:550px){
+
+    .logo-text h2{
+        font-size:18px;
+    }
+
+    .logo-icon{
+        width:40px;
+        height:40px;
+    }
+
+    .nav-actions .icon-btn:first-child{
+        display:none;
+    }
+
+    .hero h1{
+        font-size:48px;
+    }
+
+    .food-circle{
+        width:300px;
+        height:300px;
+    }
+
+    .floating-card{
+        font-size:10px;
+        padding:9px;
+    }
+
+    .food-grid{
+        grid-template-columns:1fr;
+    }
+
+    .feature-grid{
+        grid-template-columns:1fr;
+    }
+
+    .section-head h2{
+        font-size:31px;
+    }
+
+    .special-box{
+        padding:30px 25px;
+    }
+
+    .special-box h2{
+        font-size:32px;
+    }
+
+    .about-text h2{
+        font-size:32px;
+    }
+
+    .about-image img{
+        height:350px;
+    }
+
+    .location-box{
+        padding:28px;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+
+<!-- ================= TOP BAR ================= -->
+
+<div class="topbar">
+<div class="container topbar-content">
+
+<span>
+<i class="fa-solid fa-location-dot"></i>
+Bharat Takiz, Najibabad
+</span>
+
+<span>
+<i class="fa-solid fa-clock"></i>
+Open Today: 11:00 AM - 11:00 PM
+</span>
+
+</div>
+</div>
+
+
+<!-- ================= NAVBAR ================= -->
+
+<nav class="navbar">
+
+<div class="container nav-content">
+
+<a href="#" class="logo">
+
+<div class="logo-icon">
+<i class="fa-solid fa-burger"></i>
+</div>
+
+<div class="logo-text">
+<h2>ZIYAN</h2>
+<span>FAST FOOD</span>
+</div>
+
+</a>
+
+
+<div class="nav-links" id="navLinks">
+
+<a href="#home">Home</a>
+<a href="#menu">Menu</a>
+<a href="#offers">Offers</a>
+<a href="#about">About</a>
+<a href="#location">Location</a>
+
+</div>
+
+
+<div class="nav-actions">
+
+<button class="icon-btn" onclick="scrollToMenu()">
+<i class="fa-solid fa-magnifying-glass"></i>
+</button>
+
+<button class="icon-btn" onclick="openCart()">
+
+<i class="fa-solid fa-cart-shopping"></i>
+
+<span class="cart-count" id="cartCount">0</span>
+
+</button>
+
+<button class="icon-btn menu-btn" onclick="toggleMenu()">
+<i class="fa-solid fa-bars"></i>
+</button>
+
+</div>
+
+</div>
+
+</nav>
+
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero" id="home">
+
+<div class="container hero-content">
+
+<div class="hero-text">
+
+<div class="badge">
+<i class="fa-solid fa-fire"></i>
+Fresh • Hot • Delicious
+</div>
+
+<h1>
+Good Food.
+<br>
+<span>Good Mood.</span>
+</h1>
+
+<p>
+Craving something delicious? Order your favourite
+fast food from <b>Ziyan Fast Food</b> and enjoy
+fresh, hot and tasty food delivered to your doorstep
+in Najibabad.
+</p>
+
+<div class="hero-buttons">
+
+<a href="#menu" class="btn btn-primary">
+<i class="fa-solid fa-utensils"></i>
+Order Now
+</a>
+
+<a href="#offers" class="btn btn-outline">
+<i class="fa-solid fa-tag"></i>
+View Offers
+</a>
+
+</div>
+
+</div>
+
+
+<div class="hero-image">
+
+<div class="food-circle">
+
+<img
+src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=900&q=85"
+alt="Ziyan Fast Food Burger">
+
+</div>
+
+<div class="floating-card card-one">
+<i class="fa-solid fa-truck-fast"></i>
+<div>
+Fast Delivery
+<br>
+<small>Hot & Fresh</small>
+</div>
+</div>
+
+<div class="floating-card card-two">
+<i class="fa-solid fa-star"></i>
+<div>
+4.9 Rating
+<br>
+<small>Happy Customers</small>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ================= OFFER STRIP ================= -->
+
+<div class="offer-strip" id="offers">
+
+<div class="container offer-content">
+
+<strong>
+🔥 TODAY'S SPECIAL OFFER
+</strong>
+
+<span>
+Get delicious food at amazing prices!
+</span>
+
+<strong>
+ORDER NOW
+</strong>
+
+</div>
+
+</div>
+
+
+
+<!-- ================= FEATURES ================= -->
+
+<section class="features">
+
+<div class="container feature-grid">
+
+<div class="feature">
+<i class="fa-solid fa-bowl-food"></i>
+<h3>Fresh Food</h3>
+<p>Prepared fresh for every order.</p>
+</div>
+
+<div class="feature">
+<i class="fa-solid fa-fire-burner"></i>
+<h3>Hot & Tasty</h3>
+<p>Served hot and full of flavour.</p>
+</div>
+
+<div class="feature">
+<i class="fa-solid fa-truck-fast"></i>
+<h3>Fast Delivery</h3>
+<p>Quick delivery around Najibabad.</p>
+</div>
+
+<div class="feature">
+<i class="fa-solid fa-shield-heart"></i>
+<h3>Quality First</h3>
+<p>Quality ingredients and hygiene.</p>
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ================= MENU ================= -->
+
+<section class="section" id="menu">
+
+<div class="container">
+
+<div class="section-head">
+
+<small>OUR MENU</small>
+
+<h2>Choose Your Favourite</h2>
+
+<p>
+From crispy burgers to cheesy pizzas,
+discover something delicious at Ziyan Fast Food.
+</p>
+
+</div>
+
+
+<div class="categories">
+
+<button class="category-btn active" onclick="filterFood('all',this)">
+All
+</button>
+
+<button class="category-btn" onclick="filterFood('burger',this)">
+🍔 Burgers
+</button>
+
+<button class="category-btn" onclick="filterFood('pizza',this)">
+🍕 Pizza
+</button>
+
+<button class="category-btn" onclick="filterFood('momos',this)">
+🥟 Momos
+</button>
+
+<button class="category-btn" onclick="filterFood('biryani',this)">
+🍗 Biryani
+</button>
+
+<button class="category-btn" onclick="filterFood('roll',this)">
+🌯 Rolls
+</button>
+
+<button class="category-btn" onclick="filterFood('fries',this)">
+🍟 Fries
+</button>
+
+</div>
+
+
+<div class="food-grid" id="foodGrid">
+
+
+<!-- BURGER -->
+
+<div class="food-card" data-category="burger">
+
+<div class="food-img">
+
+<img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=700&q=85">
+
+<span class="food-tag">BESTSELLER</span>
+
+<button class="heart">
+<i class="fa-regular fa-heart"></i>
+</button>
+
+</div>
+
+<div class="food-info">
+
+<h3>Classic Ziyan Burger</h3>
+
+<p>Juicy patty, fresh vegetables, cheese & special sauce.</p>
+
+<div class="rating">★★★★★ <span>(4.9)</span></div>
+
+<div class="food-bottom">
+
+<div class="price">₹99</div>
+
+<button class="add-btn"
+onclick="addToCart('Classic Ziyan Burger',99,'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=300&q=80')">
++
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- CHEESE BURGER -->
+
+<div class="food-card" data-category="burger">
+
+<div class="food-img">
+
+<img src="https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=700&q=85">
+
+<span class="food-tag">HOT</span>
+
+</div>
+
+<div class="food-info">
+
+<h3>Cheese Blast Burger</h3>
+
+<p>Loaded cheese, crispy patty and creamy sauce.</p>
+
+<div class="rating">★★★★★</div>
+
+<div class="food-bottom">
+
+<div class="price">₹129</div>
+
+<button class="add-btn"
+onclick="addToCart('Cheese Blast Burger',129,'https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=300&q=80')">
++
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- PIZZA -->
+
+<div class="food-card" data-category="pizza">
+
+<div class="food-img">
+
+<img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=700&q=85">
+
+<span class="food-tag">POPULAR</span>
+
+</div>
+
+<div class="food-info">
+
+<h3>Cheesy Veg Pizza</h3>
+
+<p>Loaded cheese, vegetables and delicious pizza sauce.</p>
+
+<div class="rating">★★★★★</div>
+
+<div class="food-bottom">
+
+<div class="price">₹199</div>
+
+<button class="add-btn"
+onclick="addToCart('Cheesy Veg Pizza',199,'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=300&q=80')">
++
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- MOMOS -->
+
+<div class="food-card" data-category="momos">
+
+<div class="food-img">
+
+<img src="https://images.unsplash.com/photo-1625220194771-7ebdea0b70b9?auto=format&fit=crop&w=700&q=85">
+
+<span class="food-tag">NEW</span>
+
+</div>
+
+<div class="food-info">
+
+<h3>Steam Momos</h3>
+
+<p>Soft and juicy momos served with spicy chutney.</p>
+
+<div class="rating">★★★★★</div>
+
+<div class="food-bottom">
+
+<div class="price">₹89</div>
+
+<button class="add-btn"
+onclick="addToCart('Steam Momos',89,'https://images.unsplash.com/photo-1625220194771-7ebdea0b70b9?auto=format&fit=crop&w=300&q=80')">
++
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- BIRYANI -->
+
+<div class="food-card" data-category="biryani">
+
+<div class="food-img">
+
+<img src="https://images.unsplash.com/photo-1563379091339-03246963d29a?auto=format&fit=crop&w=700&q=85">
+
+<span class="food-tag">CHEF'S PICK</span>
+
+</div>
+
+<div class="food-info">
+
+<h3>Chicken Biryani</h3>
+
+<p>Fragrant basmati rice, chicken and aromatic spices.</p>
+
+<div class="rating">★★★★★</div>
+
+<div class="food-bottom">
+
+<div class="price">₹179</div>
+
+<button class="add-btn"
+onclick="addToCart('Chicken Biryani',179,'https://images.unsplash.com/photo-1563379091339-03246963d29a?auto=format&fit=crop&w=300&q=80')">
++
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- SHAWARMA / ROLL -->
+
+<div class="food-card" data-category="roll">
+
+<div class="food-img">
+
+<img src="https://images.unsplash.com/photo-1529006557810-274b9b2fc783?auto=format&fit=crop&w=700&q=85">
+
+<span class="food-tag">HOT</span>
+
+</div>
+
+<div class="food-info">
+
+<h3>Chicken Shawarma</h3>
+
+<p>Juicy chicken, fresh salad and creamy garlic sauce.</p>
+
+<div class="rating">★★★★★</div>
+
+<div class="food-bottom">
+
+<div class="price">₹119</div>
+
+<button class="add-btn"
+onclick="addToCart('Chicken Shawarma',119,'https://images.unsplash.com/photo-1529006557810-274b9b2fc783?auto=format&fit=crop&w=300&q=80')">
++
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- FRIES -->
+
+<div class="food-card" data-category="fries">
+
+<div class="food-img">
+
+<img src="https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&w=700&q=85">
+
+<span class="food-tag">CRISPY</span>
+
+</div>
+
+<div class="food-info">
+
+<h3>Peri Peri Fries</h3>
+
+<p>Crispy golden fries tossed with spicy peri peri seasoning.</p>
+
+<div class="rating">★★★★★</div>
+
+<div class="food-bottom">
+
+<div class="price">₹79</div>
+
+<button class="add-btn"
+onclick="addToCart('Peri Peri Fries',79,'https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&w=300&q=80')">
++
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- CHICKEN BURGER -->
+
+<div class="food-card" data-category="burger">
+
+<div class="food-img">
+
+<img src="https://images.unsplash.com/photo-1606755962773-d324e0a13086?auto=format&fit=crop&w=700&q=85">
+
+<span class="food-tag">SPECIAL</span>
+
+</div>
+
+<div class="food-info">
+
+<h3>Crispy Chicken Burger</h3>
+
+<p>Crispy chicken fillet with lettuce and signature sauce.</p>
+
+<div class="rating">★★★★★</div>
+
+<div class="food-bottom">
+
+<div class="price">₹149</div>
+
+<button class="add-btn"
+onclick="addToCart('Crispy Chicken Burger',149,'https://images.unsplash.com/photo-1606755962773-d324e0a13086?auto=format&fit=crop&w=300&q=80')">
++
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- CHOWMEIN -->
+
+<div class="food-card" data-category="momos">
+
+<div class="food-img">
+
+<img src="https://images.unsplash.com/photo-1585032226651-759b368d7246?auto=format&fit=crop&w=700&q=85">
+
+</div>
+
+<div class="food-info">
+
+<h3>Veg Chowmein</h3>
+
+<p>Stir-fried noodles with fresh vegetables and sauces.</p>
+
+<div class="rating">★★★★★</div>
+
+<div class="food-bottom">
+
+<div class="price">₹99</div>
+
+<button class="add-btn"
+onclick="addToCart('Veg Chowmein',99,'https://images.unsplash.com/photo-1585032226651-759b368d7246?auto=format&fit=crop&w=300&q=80')">
++
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- PASTA -->
+
+<div class="food-card" data-category="pizza">
+
+<div class="food-img">
+
+<img src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&w=700&q=85">
+
+</div>
+
+<div class="food-info">
+
+<h3>Creamy White Pasta</h3>
+
+<p>Creamy pasta with herbs, vegetables and cheese.</p>
+
+<div class="rating">★★★★★</div>
+
+<div class="food-bottom">
+
+<div class="price">₹149</div>
+
+<button class="add-btn"
+onclick="addToCart('Creamy White Pasta',149,'https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&w=300&q=80')">
++
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- COLD DRINK -->
+
+<div class="food-card" data-category="fries">
+
+<div class="food-img">
+
+<img src="https://images.unsplash.com/photo-1629203849820-fdd70d49c38e?auto=format&fit=crop&w=700&q=85">
+
+</div>
+
+<div class="food-info">
+
+<h3>Cold Drink</h3>
+
+<p>Chilled refreshing drink with your favourite meal.</p>
+
+<div class="rating">★★★★★</div>
+
+<div class="food-bottom">
+
+<div class="price">₹49</div>
+
+<button class="add-btn"
+onclick="addToCart('Cold Drink',49,'https://images.unsplash.com/photo-1629203849820-fdd70d49c38e?auto=format&fit=crop&w=300&q=80')">
++
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ================= SPECIAL ================= -->
+
+<section class="special">
+
+<div class="container">
+
+<div class="special-box">
+
+<div>
+
+<small>ZIYAN SPECIAL</small>
+
+<h2>
+Hungry? Let us deliver happiness.
+</h2>
+
+<p>
+Fresh ingredients, delicious taste and fast delivery.
+Your next favourite meal is just one order away.
+</p>
+
+<a href="#menu" class="btn btn-primary">
+Order Food
+<i class="fa-solid fa-arrow-right"></i>
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ================= ABOUT ================= -->
+
+<section class="section about" id="about">
+
+<div class="container about-grid">
+
+<div class="about-image">
+
+<img
+src="https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=1000&q=85"
+alt="Ziyan Fast Food">
+
+<div class="experience">
+<strong>100%</strong>
+Fresh & Tasty
+</div>
+
+</div>
+
+
+<div class="about-text">
+
+<small style="color:#ed1c24;font-weight:800;">
+ABOUT ZIYAN FAST FOOD
+</small>
+
+<h2>
+Made With Love.
+Served With Taste.
+</h2>
+
+<p>
+Ziyan Fast Food is your local destination for delicious,
+fresh and affordable fast food in Najibabad.
+</p>
+
+<p>
+Whether you're craving a juicy burger, cheesy pizza,
+crispy fries, momos, rolls or biryani,
+we're here to make your hunger disappear.
+</p>
+
+<ul class="about-list">
+
+<li>
+<i class="fa-solid fa-circle-check"></i>
+Fresh ingredients
+</li>
+
+<li>
+<i class="fa-solid fa-circle-check"></i>
+Quick preparation
+</li>
+
+<li>
+<i class="fa-solid fa-circle-check"></i>
+Affordable prices
+</li>
+
+<li>
+<i class="fa-solid fa-circle-check"></i>
+Fast local delivery
+</li>
+
+</ul>
+
+<a href="#menu" class="btn btn-primary">
+Explore Menu
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ================= LOCATION ================= -->
+
+<section class="section" id="location">
+
+<div class="container">
+
+<div class="location-box">
+
+<div>
+
+<small style="color:#ff5b2e;font-weight:800;">
+COME VISIT US
+</small>
+
+<h2>
+Find Ziyan Fast Food
+</h2>
+
+<p>
+Visit us and enjoy fresh, hot and delicious food
+with your friends and family.
+</p>
+
+<div class="contact-item">
+
+<i class="fa-solid fa-location-dot"></i>
+
+<div>
+<strong>Address</strong>
+<br>
+Bharat Takiz, Najibabad
+</div>
+
+</div>
+
+<div class="contact-item">
+
+<i class="fa-solid fa-clock"></i>
+
+<div>
+<strong>Opening Hours</strong>
+<br>
+11:00 AM – 11:00 PM
+</div>
+
+</div>
+
+<div class="contact-item">
+
+<i class="fa-solid fa-truck-fast"></i>
+
+<div>
+<strong>Delivery</strong>
+<br>
+Fast local food delivery
+</div>
+
+</div>
+
+</div>
+
+
+<div class="map-box">
+
+<div>
+
+<i class="fa-solid fa-location-dot"></i>
+
+<h3>Bharat Takiz</h3>
+
+<p>Najibabad</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+<div class="container footer-grid">
+
+<div>
+
+<div class="logo">
+
+<div class="logo-icon">
+<i class="fa-solid fa-burger"></i>
+</div>
+
+<div class="logo-text">
+<h2 style="color:#fff;">ZIYAN</h2>
+<span>FAST FOOD</span>
+</div>
+
+</div>
+
+<p style="margin-top:18px;">
+Delicious food. Fast delivery.
+Made specially for food lovers in Najibabad.
+</p>
+
+<div class="social">
+
+<a href="#">
+<i class="fa-brands fa-instagram"></i>
+</a>
+
+<a href="#">
+<i class="fa-brands fa-facebook-f"></i>
+</a>
+
+<a href="#">
+<i class="fa-brands fa-whatsapp"></i>
+</a>
+
+</div>
+
+</div>
+
+
+<div>
+
+<h3>Quick Links</h3>
+
+<ul>
+
+<li><a href="#home">Home</a></li>
+<li><a href="#menu">Menu</a></li>
+<li><a href="#offers">Offers</a></li>
+<li><a href="#about">About</a></li>
+
+</ul>
+
+</div>
+
+
+<div>
+
+<h3>Categories</h3>
+
+<ul>
+
+<li>Burgers</li>
+<li>Pizza</li>
+<li>Momos</li>
+<li>Biryani</li>
+<li>Rolls</li>
+
+</ul>
+
+</div>
+
+
+<div>
+
+<h3>Contact</h3>
+
+<ul>
+
+<li>
+<i class="fa-solid fa-location-dot"></i>
+Bharat Takiz, Najibabad
+</li>
+
+<li>
+<i class="fa-solid fa-clock"></i>
+11 AM - 11 PM
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+
+<div class="container copyright">
+
+© 2026 Ziyan Fast Food. All Rights Reserved.
+
+</div>
+
+</footer>
+
+
+
+<!-- ================= CART ================= -->
+
+<div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
+
+<div class="cart" id="cart">
+
+<div class="cart-header">
+
+<h2>
+<i class="fa-solid fa-cart-shopping"></i>
+Your Cart
+</h2>
+
+<button class="close-cart" onclick="closeCart()">
+<i class="fa-solid fa-xmark"></i>
+</button>
+
+</div>
+
+
+<div class="cart-items" id="cartItems">
+
+<p style="text-align:center;color:#888;padding:50px 0;">
+Your cart is empty 🍔
+</p>
+
+</div>
+
+
+<div class="cart-footer">
+
+<div class="total-row">
+
+<span>Total</span>
+
+<span id="cartTotal">₹0</span>
+
+</div>
+
+<button class="btn btn-primary"
+style="width:100%;"
+onclick="openCheckout()">
+
+<i class="fa-solid fa-arrow-right"></i>
+Proceed to Checkout
+
+</button>
+
+</div>
+
+</div>
+
+
+
+<!-- ================= CHECKOUT ================= -->
+
+<div class="modal" id="checkoutModal">
+
+<div class="modal-box">
+
+<button class="close-modal" onclick="closeCheckout()">
+<i class="fa-solid fa-xmark"></i>
+</button>
+
+
+<div id="checkoutForm">
+
+<h2>
+Complete Your Order 🍔
+</h2>
+
+<p style="color:#777;margin-bottom:20px;">
+Enter your details and we will prepare your order.
+</p>
+
+
+<div class="form-group">
+
+<label>Full Name</label>
+
+<input
+type="text"
+id="customerName"
+placeholder="Enter your name"
+>
+
+</div>
+
+
+<div class="form-group">
+
+<label>Mobile Number</label>
+
+<input
+type="tel"
+id="customerPhone"
+placeholder="Enter mobile number"
+maxlength="10"
+>
+
+</div>
+
+
+<div class="form-group">
+
+<label>Delivery Address</label>
+
+<textarea
+id="customerAddress"
+rows="3"
+placeholder="Enter your complete delivery address"
+></textarea>
+
+</div>
+
+
+<div class="form-group">
+
+<label>Payment Method</label>
+
+<select id="paymentMethod">
+
+<option>Cash on Delivery</option>
+<option>UPI / Online Payment</option>
+
+</select>
+
+</div>
+
+
+<div style="background:#fff5ef;padding:15px;border-radius:12px;margin-bottom:20px;">
+
+<strong>Order Total:</strong>
+
+<span
+id="checkoutTotal"
+style="float:right;color:#ed1c24;font-weight:800;">
+₹0
+</span>
+
+</div>
+
+
+<button
+class="btn btn-primary"
+style="width:100%;"
+onclick="placeOrder()">
+
+<i class="fa-solid fa-check"></i>
+Place Order
+
+</button>
+
+</div>
+
+
+<div class="success" id="successMessage">
+
+<i class="fa-solid fa-circle-check"></i>
+
+<h2>Order Received!</h2>
+
+<p style="color:#777;margin:10px 0 20px;">
+Thank you for ordering from Ziyan Fast Food.
+</p>
+
+<button class="btn btn-primary"
+onclick="closeCheckout()">
+Continue
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- ================= TOAST ================= -->
+
+<div class="toast" id="toast">
+Added to cart!
+</div>
+
+
+
+<script>
+
+/* =========================
+   CART SYSTEM
+========================= */
+
+let cart = [];
+
+
+/* ADD TO CART */
+
+function addToCart(name,price,image){
+
+    const existing = cart.find(item => item.name === name);
+
+    if(existing){
+
+        existing.qty++;
+
+    }else{
+
+        cart.push({
+            name:name,
+            price:price,
+            image:image,
+            qty:1
+        });
+
+    }
+
+    updateCart();
+
+    showToast(name + " added to cart 🛒");
+
+}
+
+
+/* UPDATE CART */
+
+function updateCart(){
+
+    const cartItems = document.getElementById("cartItems");
+
+    const count = cart.reduce(
+        (total,item)=>total + item.qty,
+        0
+    );
+
+    document.getElementById("cartCount").innerText = count;
+
+
+    if(cart.length === 0){
+
+        cartItems.innerHTML = `
+        <p style="text-align:center;color:#888;padding:50px 0;">
+        Your cart is empty 🍔
+        </p>
+        `;
+
+        document.getElementById("cartTotal").innerText = "₹0";
+
+        return;
+    }
+
+
+    let total = 0;
+
+    cartItems.innerHTML = cart.map((item,index)=>{
+
+        total += item.price * item.qty;
+
+        return `
+
+        <div class="cart-item">
+
+            <img src="${item.image}">
+
+            <div class="cart-item-info">
+
+                <h4>${item.name}</h4>
+
+                <p>₹${item.price * item.qty}</p>
+
+                <div class="qty">
+
+                    <button onclick="changeQty(${index},-1)">
+                    −
+                    </button>
+
+                    <span>${item.qty}</span>
+
+                    <button onclick="changeQty(${index},1)">
+                    +
+                    </button>
+
+                    <button
+                    class="remove"
+                    onclick="removeItem(${index})">
+                    <i class="fa-solid fa-trash"></i>
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        `;
+
+    }).join("");
+
+
+    document.getElementById("cartTotal").innerText =
+        "₹" + total;
+
+}
+
+
+/* QUANTITY */
+
+function changeQty(index,value){
+
+    cart[index].qty += value;
+
+    if(cart[index].qty <= 0){
+
+        cart.splice(index,1);
+
+    }
+
+    updateCart();
+
+}
+
+
+/* REMOVE */
+
+function removeItem(index){
+
+    cart.splice(index,1);
+
+    updateCart();
+
+}
+
+
+/* OPEN CART */
+
+function openCart(){
+
+    document.getElementById("cart").classList.add("show");
+
+    document
+    .getElementById("cartOverlay")
+    .classList.add("show");
+
+}
+
+
+/* CLOSE CART */
+
+function closeCart(){
+
+    document
+    .getElementById("cart")
+    .classList.remove("show");
+
+    document
+    .getElementById("cartOverlay")
+    .classList.remove("show");
+
+}
+
+
+/* =========================
+   CHECKOUT
+========================= */
+
+function openCheckout(){
+
+    if(cart.length === 0){
+
+        showToast("Please add food to your cart first!");
+
+        return;
+
+    }
+
+    let total = cart.reduce(
+        (sum,item)=>sum + item.price * item.qty,
+        0
+    );
+
+    document.getElementById("checkoutTotal").innerText =
+        "₹" + total;
+
+    document
+    .getElementById("checkoutModal")
+    .classList.add("show");
+
+}
+
+
+function closeCheckout(){
+
+    document
+    .getElementById("checkoutModal")
+    .classList.remove("show");
+
+}
+
+
+/* PLACE ORDER */
+
+function placeOrder(){
+
+    const name =
+        document.getElementById("customerName").value.trim();
+
+    const phone =
+        document.getElementById("customerPhone").value.trim();
+
+    const address =
+        document.getElementById("customerAddress").value.trim();
+
+
+    if(!name || !phone || !address){
+
+        alert("Please fill all required details.");
+
+        return;
+
+    }
+
+
+    if(phone.length !== 10){
+
+        alert("Please enter a valid 10 digit mobile number.");
+
+        return;
+
+    }
+
+
+    document.getElementById("checkoutForm").style.display =
+        "none";
+
+    document.getElementById("successMessage").style.display =
+        "block";
+
+    cart = [];
+
+    updateCart();
+
+}
+
+
+/* =========================
+   FOOD FILTER
+========================= */
+
+function filterFood(category,button){
+
+    document.querySelectorAll(".category-btn")
+    .forEach(btn=>btn.classList.remove("active"));
+
+    button.classList.add("active");
+
+
+    document.querySelectorAll(".food-card")
+    .forEach(card=>{
+
+        if(
+            category === "all" ||
+            card.dataset.category === category
+        ){
+
+            card.style.display = "block";
+
+        }else{
+
+            card.style.display = "none";
+
+        }
+
+    });
+
+}
+
+
+/* =========================
+   MOBILE MENU
+========================= */
+
+function toggleMenu(){
+
+    document
+    .getElementById("navLinks")
+    .classList.toggle("show");
+
+}
+
+
+/* =========================
+   SCROLL MENU
+========================= */
+
+function scrollToMenu(){
+
+    document
+    .getElementById("menu")
+    .scrollIntoView({
+        behavior:"smooth"
+    });
+
+}
+
+
+/* =========================
+   TOAST
+========================= */
+
+function showToast(message){
+
+    const toast =
+        document.getElementById("toast");
+
+    toast.innerText = message;
+
+    toast.classList.add("show");
+
+    setTimeout(()=>{
+
+        toast.classList.remove("show");
+
+    },2200);
+
+}
+
+
+/* =========================
+   CLOSE MOBILE MENU
+========================= */
+
+document.querySelectorAll(".nav-links a")
+.forEach(link=>{
+
+    link.addEventListener("click",()=>{
+
+        document
+        .getElementById("navLinks")
+        .classList.remove("show");
+
+    });
+
+});
+
+
+/* =========================
+   HEART BUTTON
+========================= */
+
+document.querySelectorAll(".heart")
+.forEach(btn=>{
+
+    btn.addEventListener("click",function(){
+
+        const icon =
+            this.querySelector("i");
+
+        icon.classList.toggle("fa-regular");
+
+        icon.classList.toggle("fa-solid");
+
+        if(icon.classList.contains("fa-solid")){
+
+            icon.style.color = "#ed1c24";
+
+        }else{
+
+            icon.style.color = "#777";
+
+        }
+
+    });
+
+});
+
+
+</script>
+
+</body>
+</html>
